@@ -128,7 +128,7 @@ with col1:
     # Add vertical line for hand-washing introduction
     if 'clinic 1' in selected_clinics:
         ax.axvline(x=1847, color='#f39c12', linestyle='--', linewidth=2, 
-                  label='Hand-washing introduced (1847)', alpha=0.7)
+                  label='Hand-washing introduced to clinic 1 (1847)', alpha=0.7)
     
     ax.set_xlabel('Year', fontsize=12, fontweight='bold')
     ax.set_ylabel('Mortality Rate (Deaths per 100 Births)', fontsize=12, fontweight='bold')
@@ -176,7 +176,7 @@ ax.set_xticks(x + width / 2)
 ax.set_xticklabels(sorted(df_filtered['Year'].unique()))
 ax.legend(fontsize=11)
 ax.grid(True, alpha=0.3, axis='y')
-
+ax.axvline(x=len(years)/2 - 0.5, color='orange', linestyle='--', linewidth=2, label='Hand-washing introduced (1847)')
 plt.tight_layout()
 st.pyplot(fig)
 

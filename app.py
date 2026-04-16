@@ -176,7 +176,7 @@ ax.set_xticks(x + width / 2)
 ax.set_xticklabels(sorted(df_filtered['Year'].unique()))
 ax.legend(fontsize=11)
 ax.grid(True, alpha=0.3, axis='y')
-ax.axvline(x=len(years)/2 - 0.5, color='orange', linestyle='--', linewidth=2, label='Hand-washing introduced (1847)')
+ax2.axvline(x=len(years)/2 - 0.5, color='orange', linestyle='--', linewidth=2, label='Hand-washing introduced (1847)')
 plt.tight_layout()
 st.pyplot(fig)
 

@@ -12,7 +12,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS for enhanced styling
+#  Used AI for Custom CSS for enhanced styling
 st.markdown("""
     <style>
     .main-title {
@@ -47,7 +47,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Title
-st.markdown('<div class="main-title">🏥 The Semmelweis Hand-Washing Study</div>', 
+st.markdown('<div class="main-title"> The Semmelweis Hand-Washing Study</div>', 
             unsafe_allow_html=True)
 
 st.markdown("""
@@ -85,7 +85,7 @@ def load_data():
 df = load_data()
 
 # Sidebar filters
-st.sidebar.markdown("### 📊 Filters & Controls")
+st.sidebar.markdown("###  Filters & Controls")
 year_range = st.sidebar.slider(
     "Select Year Range",
     min_value=int(df['Year'].min()),
@@ -114,7 +114,7 @@ df_filtered['Mortality_Rate'] = (df_filtered['Deaths'] / df_filtered['Birth'] * 
 col1, col2 = st.columns([3, 1])
 
 with col1:
-    st.markdown("### 📈 Mortality Rate Trends Over Time")
+    st.markdown("###  Mortality Rate Trends Over Time")
     
     # Line chart
     fig, ax = plt.subplots(figsize=(12, 6))
@@ -141,7 +141,7 @@ with col1:
     st.pyplot(fig)
 
 with col2:
-    st.markdown("### 📋 Key Metrics")
+    st.markdown("###  Key Metrics")
     
     for clinic in selected_clinics:
         clinic_data = df_filtered[df_filtered['Clinic'] == clinic]
@@ -157,7 +157,7 @@ with col2:
             )
 
 # Comparison chart
-st.markdown("### 📊 Annual Deaths Comparison")
+st.markdown("###  Annual Deaths Comparison")
 
 fig, ax = plt.subplots(figsize=(12, 5))
 
@@ -181,14 +181,14 @@ plt.tight_layout()
 st.pyplot(fig)
 
 # Key findings
-st.markdown("### 🔍 Key Findings")
+st.markdown("###  Key Findings")
 
 col1, col2 = st.columns(2)
 
 with col1:
     st.markdown("""
     <div class="finding-box">
-    <strong>📌 The Hand-Washing Breakthrough</strong><br>
+    <strong> The Hand-Washing Breakthrough</strong><br>
     In 1847, Dr. Ignaz Semmelweis introduced mandatory hand-washing in Clinic 1. 
     The mortality rate dropped dramatically from 18.3% to just 1.3% within one year—
     proving that simple hygiene practices could save lives.
@@ -198,7 +198,7 @@ with col1:
 with col2:
     st.markdown("""
     <div class="finding-box">
-    <strong>📌 Clinic 1 vs Clinic 2</strong><br>
+    <strong> Clinic 1 vs Clinic 2</strong><br>
     Clinic 2 consistently had lower mortality rates because midwives delivered babies there 
     using different procedures. Clinic 1 was a teaching hospital where physicians delivered babies, 
     often coming directly from autopsies without washing hands.
@@ -207,7 +207,7 @@ with col2:
 
 # Data exploration section
 st.markdown("---")
-st.markdown("### 📑 Data Explorer")
+st.markdown("###  Data Explorer")
 
 if st.checkbox("Show raw data"):
     st.dataframe(
@@ -218,7 +218,7 @@ if st.checkbox("Show raw data"):
 # Historical context
 st.markdown("---")
 st.markdown("""
-### 📚 Historical Context
+###  Historical Context
 
 Childbed fever (puerperal fever) was a leading cause of maternal mortality in the 19th century. 
 Dr. Ignaz Semmelweis, a Hungarian physician, observed that mortality rates were significantly 

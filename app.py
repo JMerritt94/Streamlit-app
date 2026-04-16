@@ -47,7 +47,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Title
-st.markdown('<div class="main-title"> The Semmelweis Hand-Washing Study</div>', 
+st.markdown('<div class="main-title"> Hand Washing Saves Lives!</div>', 
             unsafe_allow_html=True)
 
 st.markdown("""

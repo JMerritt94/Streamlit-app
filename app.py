@@ -174,9 +174,12 @@ ax.set_ylabel('Number of Deaths', fontsize=12, fontweight='bold')
 ax.set_title('Total Deaths by Clinic and Year', fontsize=14, fontweight='bold', pad=20)
 ax.set_xticks(x + width / 2)
 ax.set_xticklabels(sorted(df_filtered['Year'].unique()))
+# Add vertical line for hand-washing introduction
+if 1847 in years:
+    handwash_index = years.index(1847)
+    ax2.axvline(x=handwash_index + 0.5, color='orange', linestyle='--', linewidth=2.5, label='Hand-washing introduced (1847)', alpha=0.7)
 ax.legend(fontsize=11)
 ax.grid(True, alpha=0.3, axis='y')
-ax2.axvline(x=len(years)/2 - 0.5, color='orange', linestyle='--', linewidth=2, label='Hand-washing introduced (1847)')
 plt.tight_layout()
 st.pyplot(fig)
 
